@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+{%extends 'base.html'%}
+
+{%block content%}
+<html lang="en">
+<head>
+
+</head>
+
+<body>
+    <div class="page-wrap">
+        <!-- Sidebar -->
+        <div id="sidebar-container"></div>
+
+        <div id="page-content-wrap" class="home-wrap">
+            <!-- Header -->
+            <div id="header"></div>
+
+            <!-- Main page content -->
+            <div class="main-wrap">
+                <!-- <div class="top-btn">
+                    <button class="btn back-btn">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        Back
+                    </button>
+                </div> -->
+                <div class="container-fluid">
+                    <div class="col-12 col-xl-11">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-12 col-xl-6">
+                                        <div class="card-txt">
+                                            <h6>PERFORMANCE</h6>
+                                            <h3>Overall Message Activity</h3>
+                                        </div>
+                                        <div class="card-box">
+                                            <div id="line-chartContainer"
+                                                style="height: 250px; width: 100%; margin: auto;"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-xl-6 mr-bot">
+                                        <div class="card-txt">
+                                            <h6>PERFORMANCE</h6>
+                                            <h3>Overall Message Activity</h3>
+                                        </div>
+                                        <div class="card-box">
+                                            <div id="pie-chartContainer"
+                                                style="height: 250px; width: 100%; margin: auto;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% if question_obj1 %}
+                    <div class="col-12 col-xl-11">
+                        <div class="card home-table">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Question</th>
+                                            <th scope="col">Average</th>
+                                            <th scope="col">Change</th>
+                                            <th scope="col">Last date collected</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for i in question_obj1 %}
+                                        <tr>
+                                            <td>{{ i.name }}</td>
+                                            <td>
+                                                {{ i.rating }}
+                                            </td>
+                                            <td><i class="fa-solid fa-arrow-up"></i></td>
+                                            <td>{{ i.created_at }}</td>
+                                        </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script -->
+</body>
+
+</html>
+{%endblock%}
